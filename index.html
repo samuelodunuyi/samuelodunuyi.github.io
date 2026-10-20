@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Samuel Odunuyi, Software Engineer</title>
+<meta name="description" content="Full stack software engineer in London. Live demos of PharmaStep, Vendli, Pulsewise and Recoup, plus four years of production work in finance, retail and HR.">
+<meta property="og:title" content="Samuel Odunuyi, Software Engineer">
+<meta property="og:description" content="Full stack software engineer in London. Try the live demos.">
+<meta property="og:image" content="assets/vendli-admin.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231E5B47'/%3E%3Ctext x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='Arial' font-weight='700' font-size='30' fill='%23F6F7F4'%3ESO%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F6F7F4; --surface:#FFFFFF; --ink:#18212B; --muted:#5B6672;
+  --line:#DCE1DA; --forest:#1E5B47; --forest-deep:#153F32; --amber:#E8A93A;
+  --display:"Bricolage Grotesque",system-ui,sans-serif;
+  --body:"Instrument Sans",system-ui,sans-serif;
+  --wrap:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--amber);outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+
+/* header */
+.top{display:flex;align-items:center;justify-content:space-between;padding:22px 0}
+.mark{font:800 20px/1 var(--display);text-decoration:none;letter-spacing:-.01em}
+.nav{display:flex;gap:26px;font-weight:500;font-size:15px}
+.nav a{text-decoration:none;color:var(--muted)}
+.nav a:hover{color:var(--ink)}
+
+/* hero */
+.hero{padding:72px 0 40px}
+.hero h1{font:800 clamp(44px,7.4vw,104px)/.95 var(--display);letter-spacing:-.035em;margin:0;max-width:13ch}
+.hero .lede{max-width:58ch;font-size:19px;color:var(--muted);margin:30px 0 0}
+.status{display:inline-flex;align-items:center;gap:10px;font-weight:500;font-size:15px;margin-bottom:28px}
+.status i{width:9px;height:9px;border-radius:50%;background:var(--amber);box-shadow:0 0 0 4px rgba(232,169,58,.22)}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 20px;border-radius:10px;font-weight:600;font-size:16px;text-decoration:none;border:1.5px solid var(--ink)}
+.btn.solid{background:var(--forest);border-color:var(--forest);color:#fff}
+.btn.solid:hover{background:var(--forest-deep);border-color:var(--forest-deep)}
+.btn.ghost:hover{background:var(--ink);color:var(--paper)}
+
+/* screen strip */
+.strip{display:grid;grid-template-columns:1.35fr 1fr 1fr;gap:18px;margin:64px 0 0}
+.strip a{display:block;text-decoration:none}
+.strip figure{margin:0}
+.strip figcaption{font-size:14px;color:var(--muted);margin-top:10px}
+.strip figcaption b{color:var(--ink);font-weight:600}
+
+/* browser frame */
+.frame{background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.frame .bar{display:flex;align-items:center;gap:10px;height:34px;padding:0 12px;border-bottom:1px solid var(--line);background:#EEF1EC}
+.frame .dots{display:flex;gap:6px}
+.frame .dots span{width:9px;height:9px;border-radius:50%;background:#C9D0C8}
+.frame .url{flex:1;font-size:12.5px;color:var(--muted);background:#fff;border:1px solid var(--line);border-radius:6px;padding:3px 10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.frame img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:top left}
+a:hover .frame{border-color:var(--forest)}
+
+/* sections */
+section{padding:96px 0 0}
+.head{display:flex;align-items:baseline;justify-content:space-between;gap:20px;border-top:2px solid var(--ink);padding-top:22px;margin-bottom:48px}
+.head h2{font:700 clamp(30px,4vw,44px)/1.05 var(--display);letter-spacing:-.02em;margin:0}
+.head p{margin:0;color:var(--muted);max-width:46ch}
+
+/* projects */
+.project{display:grid;grid-template-columns:1.25fr 1fr;gap:48px;align-items:start;padding:0 0 72px}
+.project + .project{border-top:1px solid var(--line);padding-top:72px}
+.project:nth-of-type(even) .shot{order:2}
+.project h3{font:700 32px/1.1 var(--display);letter-spacing:-.02em;margin:0 0 6px}
+.project .kind{color:var(--forest);font-weight:600;margin:0 0 18px}
+.project p{margin:0 0 14px;max-width:60ch}
+.project ul{margin:0 0 18px;padding-left:20px}
+.project li{margin-bottom:6px}
+.stack{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 24px;padding:0;list-style:none}
+.stack li{font-size:14px;padding:4px 10px;border:1px solid var(--line);border-radius:999px;background:var(--surface);margin:0}
+.links{display:flex;flex-wrap:wrap;gap:10px}
+.links .btn{padding:10px 16px;font-size:15px}
+.note{font-size:14px;color:var(--muted)}
+.placeholder{aspect-ratio:16/10;display:grid;place-content:center;text-align:center;padding:40px;background:linear-gradient(180deg,#fff,#EEF3EE)}
+.placeholder strong{font:800 44px/1 var(--display);letter-spacing:-.03em;color:var(--forest)}
+.placeholder span{color:var(--muted);margin-top:10px}
+
+/* backend list */
+.apis{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--line)}
+.api{padding:28px 28px 28px 0}
+.api + .api{border-left:1px solid var(--line);padding-left:28px}
+.api h3{font:700 22px/1.2 var(--display);margin:0 0 8px}
+.api p{margin:0 0 12px;color:var(--muted)}
+
+/* experience timeline */
+.timeline{list-style:none;margin:0;padding:0}
+.job{display:grid;grid-template-columns:220px 1fr;gap:32px;padding:28px 0;border-top:1px solid var(--line)}
+.job:first-child{border-top:0;padding-top:0}
+.when{font-weight:600;color:var(--muted);font-size:15px}
+.job h3{font:700 24px/1.2 var(--display);margin:0}
+.job .role{margin:4px 0 14px;color:var(--forest);font-weight:600}
+.job ul{margin:0;padding-left:20px;max-width:70ch}
+.job li{margin-bottom:6px}
+
+/* research */
+.papers{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.papers h3{font:700 22px/1.25 var(--display);margin:0 0 8px}
+.papers p{margin:0 0 12px}
+.papers .src{color:var(--muted);font-size:15px}
+
+/* contact */
+.contact{margin-top:112px;background:var(--forest);color:#fff;border-radius:20px;padding:64px 56px}
+.contact h2{font:800 clamp(36px,5.5vw,72px)/1 var(--display);letter-spacing:-.03em;margin:0 0 18px;max-width:14ch}
+.contact p{max-width:52ch;color:#D7E6DF;margin:0 0 30px}
+.contact .btn{border-color:#fff;color:#fff}
+.contact .btn.solid{background:#fff;color:var(--forest);border-color:#fff}
+.contact .btn.ghost:hover{background:#fff;color:var(--forest)}
+footer{padding:36px 0 48px;color:var(--muted);font-size:14px}
+
+@media (max-width:900px){
+  .nav{display:none}
+  .strip{grid-template-columns:1fr}
+  .strip figure:nth-child(n+2){display:none}
+  .project{grid-template-columns:1fr;gap:28px}
+  .project:nth-of-type(even) .shot{order:0}
+  .apis,.papers{grid-template-columns:1fr}
+  .api + .api{border-left:0;border-top:1px solid var(--line);padding-left:0}
+  .job{grid-template-columns:1fr;gap:6px}
+  .head{flex-direction:column;gap:8px}
+  .contact{padding:40px 24px}
+  section{padding-top:72px}
+  .hero{padding-top:40px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="mark" href="#">Samuel Odunuyi</a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#work">Work</a>
+      <a href="#experience">Experience</a>
+      <a href="#research">Research</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <p class="status"><i aria-hidden="true"></i>Available now in London, with right to work in the UK</p>
+      <h1>I build the software businesses run on.</h1>
+      <p class="lede">I'm a full stack engineer with four years of production work across finance, retail and HR, from the first conversation with the people who'll use a system to the Figma prototype, the frontend, the API behind it and the training once it's live. The projects below are running, so you can sign in and try them.</p>
+      <div class="actions">
+        <a class="btn solid" href="#work">Try the live demos</a>
+        <a class="btn ghost" href="https://github.com/samuelodunuyi">GitHub</a>
+        <a class="btn ghost" href="https://linkedin.com/in/samuel-odunuyi">LinkedIn</a>
+      </div>
+
+      <div class="strip">
+        <a href="#vendli"><figure>
+          <div class="frame"><div class="bar"><div class="dots"><span></span><span></span><span></span></div><div class="url">Vendli, admin dashboard</div></div>
+          <img src="assets/vendli-admin.jpg" alt="Vendli admin dashboard showing revenue, orders and a daily revenue chart" width="1440" height="900"></div>
+          <figcaption><b>Vendli</b>, retail and point of sale</figcaption></figure></a>
+        <a href="#pulsewise"><figure>
+          <div class="frame"><div class="bar"><div class="dots"><span></span><span></span><span></span></div><div class="url">Pulsewise</div></div>
+          <img src="assets/pulsewise-dashboard.jpg" alt="Pulsewise hospital dashboard with appointment, patient and revenue figures" width="1440" height="900" loading="lazy"></div>
+          <figcaption><b>Pulsewise</b>, hospital management</figcaption></figure></a>
+        <a href="#vendli"><figure>
+          <div class="frame"><div class="bar"><div class="dots"><span></span><span></span><span></span></div><div class="url">Vendli POS</div></div>
+          <img src="assets/vendli-pos.jpg" alt="Vendli point of sale screen with product grid and current sale panel" width="1440" height="900" loading="lazy"></div>
+          <figcaption><b>Vendli POS</b>, the till view</figcaption></figure></a>
+      </div>
+    </div>
+
+    <section id="work">
+      <div class="head">
+        <h2>Projects you can try</h2>
+        <p>Each one runs on demo data, so nothing you click touches a real business.</p>
+      </div>
+
+      <article class="project" id="pharmastep">
+        <div class="shot">
+          <div class="frame"><div class="bar"><div class="dots"><span></span><span></span><span></span></div><div class="url">PharmaStep</div></div>
+          <div class="placeholder"><strong>PharmaStep</strong><span>Screenshots arrive with the live demo.</span></div></div>
+        </div>
+        <div>
+          <h3>PharmaStep</h3>
+          <p class="kind">Full stack online pharmacy</p>
+          <p>An online pharmacy for Lagos where customers buy medicines that licensed pharmacists check before delivery. I built both sides, the shop and the pharmacy team's back office.</p>
+          <ul>
+            <li>Shopping, guest checkout and payment by card, bank transfer or USSD, with an order only marked paid after the server confirms it with Paystack.</li>
+            <li>Prescription upload at checkout, stored privately and reviewed by a pharmacist before anything ships.</li>
+            <li>Order tracking with an email at each step.</li>
+            <li>A pharmacist chat assistant on Claude that answers minor questions from trusted sources and hands anything serious to a pharmacist.</li>
+          </ul>
+          <ul class="stack"><li>Next.js 16</li><li>React 19</li><li>TypeScript</li><li>Prisma</li><li>PostgreSQL</li><li>Supabase</li><li>Tailwind CSS</li><li>shadcn/ui</li><li>Paystack</li><li>Claude API</li></ul>
+          <div class="links">
+            <a class="btn ghost" href="https://github.com/samuelodunuyi/Pharmastep">View the code</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project" id="vendli">
+        <div class="shot">
+          <div class="frame"><div class="bar"><div class="dots"><span></span><span></span><span></span></div><div class="url">Vendli</div></div>
+          <img src="assets/vendli-admin.jpg" alt="Vendli admin dashboard" width="1440" height="900" loading="lazy"></div>
+        </div>
+        <div>
+          <h3>Vendli</h3>
+          <p class="kind">Retail management and point of sale</p>
+          <p>Point of sale, stock, customers and analytics for businesses with more than one store. Each role sees its own version of the app, and store access is enforced by the API rather than just hidden in the interface.</p>
+          <ul>
+            <li>Super admins work across every store. Store admins see only their store and approve voids and returns. Cashiers ring up sales at the till.</li>
+            <li>The demo holds 5 stores, 45 products, 64 customers and about 500 orders from the past year, with dates shifted so today always has activity.</li>
+            <li>One-click demo sign-in for each role.</li>
+          </ul>
+          <ul class="stack"><li>React</li><li>TypeScript</li><li>Vite</li><li>Redux Toolkit</li><li>RTK Query</li><li>React Hook Form</li><li>Zod</li><li>Recharts</li><li>shadcn/ui</li></ul>
+          <div class="links">
+            <a class="btn solid" href="https://vendli-pos.vercel.app/auth">Open the live demo</a>
+            <a class="btn ghost" href="https://github.com/samuelodunuyi/Vendli">View the code</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project" id="pulsewise">
+        <div class="shot">
+          <div class="frame"><div class="bar"><div class="dots"><span></span><span></span><span></span></div><div class="url">Pulsewise</div></div>
+          <img src="assets/pulsewise-patients.jpg" alt="Pulsewise patients table with search, filters and status badges" width="1440" height="900" loading="lazy"></div>
+        </div>
+        <div>
+          <h3>Pulsewise</h3>
+          <p class="kind">Hospital management dashboard</p>
+          <p>Appointments, patients, doctors, beds, payments, schedules and reports in one dashboard, built in Vue. Everything you change is saved in your browser, so the demo keeps your edits between visits.</p>
+          <ul>
+            <li>Searchable, filterable tables with patient records and status tracking.</li>
+            <li>Charts for patient volume, admissions and revenue, plus light and dark themes.</li>
+            <li>A reset option in the account menu brings the demo data back.</li>
+          </ul>
+          <ul class="stack"><li>Vue 3</li><li>Vite</li><li>Tailwind CSS</li><li>Radix Vue</li><li>Chart.js</li></ul>
+          <div class="links">
+            <a class="btn ghost" href="https://github.com/samuelodunuyi/Pulsewise">View the code</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project" id="recoup">
+        <div class="shot">
+          <div class="frame"><div class="bar"><div class="dots"><span></span><span></span><span></span></div><div class="url">Recoup</div></div>
+          <div class="placeholder"><strong>Recoup</strong><span>Screenshots arrive with the live demo.</span></div></div>
+        </div>
+        <div>
+          <h3>Recoup</h3>
+          <p class="kind">AI agents for failed payment recovery</p>
+          <p>A prototype for subscription businesses on Paystack and Flutterwave. When a recurring charge fails, an agent holds a recovery conversation over a WhatsApp style chat in English or Pidgin and closes it with a payment link, a scheduled retry or a handoff to a person.</p>
+          <ul>
+            <li>A LangGraph flow that routes each case, retrieves the right playbook for the decline code and escalates disputes to a human every time.</li>
+            <li>An evaluation harness of 28 scenarios that raised action correctness from 86% to 100% and routing accuracy from 96% to 100%.</li>
+            <li>Runs on synthetic data out of the box, with no payment or WhatsApp keys needed.</li>
+          </ul>
+          <ul class="stack"><li>Python</li><li>LangGraph</li><li>FastAPI</li><li>pgvector</li><li>Anthropic and OpenAI</li><li>Docker</li><li>GitHub Actions</li></ul>
+          <div class="links">
+            <a class="btn solid" href="https://recoup-742c.onrender.com/">Open the live demo</a>
+            <a class="btn ghost" href="https://github.com/samuelodunuyi/Recoup">View the code</a>
+          </div>
+          <p class="note">The demo runs on a free server that sleeps when idle, so the first load can take up to a minute.</p>
+        </div>
+      </article>
+
+      <div class="apis">
+        <div class="api">
+          <h3>Subscription platform API</h3>
+          <p>Accounts with cookie sessions, plans an admin manages, and one live subscription per user that can be paid for, cancelled and renewed.</p>
+          <a href="https://github.com/samuelodunuyi/Next-Subscription-Service">View the code</a>
+        </div>
+        <div class="api">
+          <h3>Deal pipeline API</h3>
+          <p>Tracks infrastructure deals through review stages, with the grants attached to them and staff development records. Django REST Framework on Postgres.</p>
+          <a href="https://github.com/samuelodunuyi/Deal-Pipeline">View the code</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="head">
+        <h2>Where I've worked</h2>
+        <p>This work is in production for real clients, so the code stays private. Here's what it does.</p>
+      </div>
+      <ol class="timeline" reversed>
+        <li class="job">
+          <div class="when">Jan 2025 to Aug 2026</div>
+          <div>
+            <h3>InfraCredit</h3>
+            <p class="role">Software Engineer, clean energy and infrastructure finance</p>
+            <ul>
+              <li>Led frontend delivery across internal and client platforms serving around 800 users, taking requirements straight from the people who use them.</li>
+              <li>Built the Origination System's frontend and .NET API, which cut client onboarding from about three weeks to under five days.</li>
+              <li>Built the company's AI assistant on Claude, with 25 read only tools over live company data, used by everyone on the learning platform and team apps.</li>
+              <li>Architected the systems behind a clean energy programme, with role based portals, approval workflows and a full audit trail.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="job">
+          <div class="when">Sep 2023 to Dec 2024</div>
+          <div>
+            <h3>Codeware Derivatives</h3>
+            <p class="role">Full Stack Engineer and Team Lead</p>
+            <ul>
+              <li>Led a team of five developers across client projects and trained a new group of ten interns every six months.</li>
+              <li>Built CW Retail, a multi-store retail and point of sale platform used by 3,000+ people.</li>
+              <li>Built SapphireHR 2.0, an HR product where payroll runs that used to take weeks now finish in a day.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="job">
+          <div class="when">Sep 2022 to Sep 2023</div>
+          <div>
+            <h3>Codeware Derivatives</h3>
+            <p class="role">Frontend Engineer</p>
+            <ul>
+              <li>Built eProcure, which replaced an email and paper process where requisitions could take months and cut procurement to three days.</li>
+              <li>Built CTPMS, a CRM and portfolio platform with 400+ data point forms and dashboards.</li>
+            </ul>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section id="research">
+      <div class="head">
+        <h2>Research</h2>
+        <p>MSc Artificial Intelligence and Robotics, University of Hertfordshire. BSc Computer Science.</p>
+      </div>
+      <div class="papers">
+        <div>
+          <h3>Language conditioned task planning</h3>
+          <p>For my MSc I fine tuned a transformer to turn plain instructions into action sequences a simulated robot can carry out, and tested it across 400 controlled episodes. The results showed that instruction complexity, not task complexity, explained the gap between two benchmark datasets.</p>
+          <p class="src"><a href="https://github.com/samuelodunuyi/Long-Horizon-Task-Planning">Code on GitHub</a></p>
+        </div>
+        <div>
+          <h3>An Internet of Things based real time monitoring system for smart classrooms</h3>
+          <p>A system I designed and built on Arduino to monitor a classroom environment in real time. Peer reviewed and cited more than 20 times.</p>
+          <p class="src">Journal of the Nigerian Society of Physical Sciences, 2022</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="contact" id="contact">
+      <h2>Let's talk about your next build.</h2>
+      <p>I'm looking for a full stack or frontend role in London, hybrid or remote. The quickest way to reach me is email.</p>
+      <div class="actions">
+        <a class="btn solid" href="mailto:samuelodunuyi@gmail.com">samuelodunuyi@gmail.com</a>
+        <a class="btn ghost" href="https://linkedin.com/in/samuel-odunuyi">LinkedIn</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>Samuel Odunuyi, London</footer>
+</div>
+</body>
+</html>
